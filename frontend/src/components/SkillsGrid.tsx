@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function SkillsGrid({ lang }: Props) {
-  const [animate, setAnimate] = useState(false);
+  const [isVisible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export function SkillsGrid({ lang }: Props) {
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true);
+          setVisible(true);
           obs.disconnect();
         }
       },
@@ -39,8 +39,6 @@ export function SkillsGrid({ lang }: Props) {
           </div>
           <div className="skill-name">{s.name}</div>
           <div className="skill-meta">
-            <span>
-            </span>
           </div>
           <div className="skill-tags">
             {s.tags.map((t) => (

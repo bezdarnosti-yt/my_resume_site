@@ -18,6 +18,12 @@ class Settings(BaseSettings):
     tg_bot_token: str = ""
     tg_chat_id: str = ""
 
+    smtp_host: str = "smtp.gmail.com"
+    smtp_port: int = 587
+    smtp_user: str = ""
+    smtp_password: str = ""
+    notify_email: str = ""
+
     github_username: str = "bezdarnosti-yt"
 
     model_config = SettingsConfigDict(
